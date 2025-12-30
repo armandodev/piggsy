@@ -57,10 +57,3 @@ class FinancialPeriod(Base):
         """Status of the financial period (active: True/inactive: False)"""
         current_date = datetime.date.today()
         return self.__end_date >= current_date
-
-    def close(self) -> None:
-        """Close a financial period if you have not already done so, due to the generation of a financial balance sheet."""
-        if not self.status:
-            raise Exception("No se puede modificar un período financiero inactivo.")
-        self.__end_date = datetime.datetime.now()
-        super().update()
