@@ -23,3 +23,7 @@ class Base:
     def updated_at(self) -> datetime.datetime:
         """Date and time of the last update"""
         return self.__updated_at
+
+    def update(self) -> None:
+        date = datetime.datetime.now()
+        self.__updated_at = date

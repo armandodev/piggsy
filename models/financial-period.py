@@ -10,7 +10,7 @@ class FinancialPeriod(Base):
         self,
         id: str | None = None,
         start_date: datetime.date | None = None,
-        financial_period_duration: int = 1,  # Meses
+        financial_period_duration: int = 1,
     ) -> None:
         super().__init__(id)
         current_date = datetime.date.today()
@@ -45,6 +45,7 @@ class FinancialPeriod(Base):
             )
         self.__financial_period_duration = value
         self.__end_date = self.__calculate_end_date()
+        super().update()
 
     @property
     def end_date(self) -> datetime.date:
