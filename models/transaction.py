@@ -18,3 +18,21 @@ class Transaction(Base):
     def financial_period_id(self) -> str:
         """ID of the associated financial period"""
         return self.__financial_period_id
+
+    @property
+    def title(self) -> str:
+        """Title of the transaction"""
+        return self.__title
+
+    @property
+    def description(self) -> str:
+        """Description of the transaction"""
+        return self.__description
+
+    @title.setter
+    def title(self, value: str) -> None:
+        self.__title = value
+
+    @description.setter
+    def description(self, value: str) -> None:
+        self.__description = value
